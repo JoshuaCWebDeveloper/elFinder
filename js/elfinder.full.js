@@ -12,19 +12,27 @@
 		define(['jquery','jquery-ui'], factory);
 	} else if (typeof exports !== 'undefined') {
 		// CommonJS
-		var $, ui;
-		try {
-			$ = require('jquery');
-			ui = require('jquery-ui');
-		} catch (e) {}
-		module.exports = factory($, ui);
+		module.exports = function ($) {
+			try {
+				var factories = {
+					keycode: require('jquery-ui/ui/keycode'),
+					selectable: require('jquery-ui/ui/widgets/selectable'),
+					droppable: require('jquery-ui/ui/widgets/droppable'),
+					resizable: require('jquery-ui/ui/widgets/resizable')
+				};
+				for (var f in factories) {
+					factories[f]($);
+				}
+			} catch (e) {}
+			return factory($, undefined);
+		};
 	} else {
 		// Browser globals (Note: root is window)
 		factory(root.jQuery, root.jQuery.ui, true);
 	}
 }(this, function($, _ui, toGlobal) {
 toGlobal = toGlobal || false;
-
+var jQuery = $;
 
 /*
  * File: /js/elFinder.js
