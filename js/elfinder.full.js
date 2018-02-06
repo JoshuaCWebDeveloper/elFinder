@@ -4743,7 +4743,8 @@ var elFinder = function(elm, opts, bootCallback) {
 				self.trigger('fail').disable().lastDir('');
 				listeners = {};
 				shortcuts = {};
-				$(document).add(node).off('.'+namespace);
+				//WHY???
+				//$(document).add(node).off('.'+namespace);
 				self.trigger = function() { };
 			})
 			.done(function(data) {
