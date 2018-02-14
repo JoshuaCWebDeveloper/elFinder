@@ -18,7 +18,8 @@
 					keycode: require('jquery-ui/ui/keycode'),
 					selectable: require('jquery-ui/ui/widgets/selectable'),
 					droppable: require('jquery-ui/ui/widgets/droppable'),
-					resizable: require('jquery-ui/ui/widgets/resizable')
+					resizable: require('jquery-ui/ui/widgets/resizable'),
+					button: require('jquery-ui/ui/widgets/button')
 				};
 				for (var f in factories) {
 					factories[f]($);
