@@ -1,6 +1,6 @@
 /*!
  * elFinder - file manager for web
- * Version 2.1.31 (2.1-src Nightly: 5982021) (2018-02-03)
+ * Version 2.1.32 (2.1-src Nightly: d31d2c1) (2018-02-14)
  * http://elfinder.org
  * 
  * Copyright 2009-2018, Studio 42
@@ -294,6 +294,10 @@
 .elfinder-touch .elfinder-file-edit {
 	font-size: 16px;
 }
+/* edit area */
+.ui-dialog .ui-dialog-content.elfinder-edit-editor {
+	background-color: #fff;
+}
 /* bottom margen for softkeyboard on fullscreen mode */
 .elfinder-touch.elfinder-fullscreen-native textarea.elfinder-file-edit {
 	padding-bottom: 20em;
@@ -491,11 +495,18 @@ div.elfinder-cwd-wrapper-list tr.ui-state-default td span.ui-icon {
 .elfinder-help-preference dd {
 	margin-bottom: 1em;
 }
+.elfinder-help-preference dt label {
+	cursor: pointer;
+}
 .elfinder-help-preference dd label,
 .elfinder-help-preference dd input[type=checkbox] {
 	white-space: nowrap;
 	display: inline-block;
 	cursor: pointer;
+}
+.elfinder-help-preference dd.elfinder-help-toolbarPref,
+.elfinder-help-preference dd.elfinder-help-columnPref {
+	padding-top: 3ex;
 }
 
 /********************** COMMAND "INFO" ****************************/
@@ -3303,8 +3314,12 @@ embed.elfinder-quicklook-preview-audio {
 	height: auto;
 	min-height: 26px;
 	float:right;
-	width:202px;
+	width: 70px;
 	overflow: visible;
+}
+
+.elfinder .elfinder-button-search.ui-state-active {
+	width: 220px;
 }
 
 .elfinder .elfinder-button-search .elfinder-button-menu {
@@ -3329,8 +3344,9 @@ embed.elfinder-quicklook-preview-audio {
 
 /* search text field */
 .elfinder-button-search input[type=text] {
-	width:160px;
-	height:22px;
+	box-sizing: border-box;
+	width: 100%;
+	height: 26px;
 	padding:0 20px;
 	line-height: 22px;
 	border:0 solid;
@@ -3345,7 +3361,7 @@ embed.elfinder-quicklook-preview-audio {
 	display: none;
 }
 .elfinder-touch .elfinder-button-search input {
-	height:28px;
+	height:30px;
 	line-height: 28px;
 }
 .elfinder-rtl .elfinder-button-search input { direction:rtl; }
