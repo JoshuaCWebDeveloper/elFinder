@@ -4071,7 +4071,7 @@ var elFinder = function(elm, opts, bootCallback) {
 		self.messages = i18n.messages;
 		
 		// check jquery ui
-		if (!($.fn.selectable && $.fn.draggable && $.fn.droppable && $.fn.resizable)) {
+		if (!($.fn.selectable && $.fn.draggable && $.fn.droppable && $.fn.resizable && $.fn.button)) {
 			return alert(self.i18n('errJqui'));
 		}
 		
@@ -11283,7 +11283,7 @@ if (typeof elFinder === 'function' && elFinder.prototype.i18) {
 			'error'                : 'Error',
 			'errUnknown'           : 'Unknown error.',
 			'errUnknownCmd'        : 'Unknown command.',
-			'errJqui'              : 'Invalid jQuery UI configuration. Selectable, draggable, droppable, and resizable components must be included.',
+			'errJqui'              : 'Invalid jQuery UI configuration. Selectable, draggable, droppable, resizable, and button components must be included.',
 			'errNode'              : 'elFinder requires DOM Element to be created.',
 			'errURL'               : 'Invalid elFinder configuration! URL option is not set.',
 			'errAccess'            : 'Access denied.',
